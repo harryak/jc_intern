@@ -163,7 +163,10 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>&nbsp;Logout</a></li>
+                                <li>
+                                    <form id="logout-form" style="display:none;" action="{{ url('/logout') }}" method="post">{!! csrf_field() !!}</form>
+                                    <a href="#" onclick="$('#logout-form').submit()"><i class="fa fa-btn fa-sign-out-alt"></i>&nbsp;Logout</a>
+                                </li>
                             </ul>
                         </li>
                     @endif
